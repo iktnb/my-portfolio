@@ -7,8 +7,20 @@
   --color-accent-cyan: #38BDF8;
   --color-accent-violet: #A78BFA;
   --color-primary: #E5E7EB;
-  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-body: "Source Sans 3", "Inter", system-ui, sans-serif;
+  --font-heading: "Orbitron", system-ui, sans-serif;
+  --font-body: "Exo 2", system-ui, sans-serif;
+}
+
+/* Neon glow for icons (SVG): drop-shadow with 0 offset and increasing blur */
+.neon-icon-cyan {
+  filter: drop-shadow(0 0 4px var(--color-accent-cyan))
+    drop-shadow(0 0 12px var(--color-accent-cyan))
+    drop-shadow(0 0 24px var(--color-accent-cyan));
+}
+.neon-icon-violet {
+  filter: drop-shadow(0 0 4px var(--color-accent-violet))
+    drop-shadow(0 0 12px var(--color-accent-violet))
+    drop-shadow(0 0 24px var(--color-accent-violet));
 }
 
 @layer base {

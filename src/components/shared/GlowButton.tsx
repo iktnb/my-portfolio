@@ -5,6 +5,7 @@ interface GlowButtonProps {
   href?: string
   onClick?: () => void
   variant?: 'cyan' | 'violet'
+  external?: boolean
   className?: string
 }
 
@@ -13,28 +14,51 @@ export function GlowButton({
   href,
   onClick,
   variant = 'cyan',
+  external = false,
   className = '',
 }: GlowButtonProps) {
   const base =
-    'inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background'
+    'group relative inline-flex items-center justify-center overflow-hidden rounded-md px-6 py-3 font-medium transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background active:scale-[0.98]'
   const cyan =
-    'bg-accent-cyan text-background hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] focus:ring-accent-cyan'
+    'border border-accent-cyan/50 bg-accent-cyan/5 text-accent-cyan hover:border-accent-cyan hover:bg-accent-cyan/15 hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(56,189,248,0.35)] focus:ring-accent-cyan'
   const violet =
-    'bg-accent-violet text-background hover:shadow-[0_0_20px_rgba(167,139,250,0.4)] focus:ring-accent-violet'
+    'border border-accent-violet/50 bg-accent-violet/5 text-accent-violet hover:border-accent-violet hover:bg-accent-violet/15 hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(167,139,250,0.35)] focus:ring-accent-violet'
 
   const styles = `${base} ${variant === 'cyan' ? cyan : violet} ${className}`
 
+  const shimmerCyan =
+    'absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent-cyan/20 to-transparent transition-transform duration-500 group-hover:translate-x-full'
+  const shimmerViolet =
+    'absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent-violet/20 to-transparent transition-transform duration-500 group-hover:translate-x-full'
+
+  const content = (
+    <>
+      <span
+        className={variant === 'cyan' ? shimmerCyan : shimmerViolet}
+        aria-hidden
+      />
+      <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
+    </>
+  )
+
   if (href) {
     return (
-      <a href={href} className={styles}>
-        {children}
+      <a
+        href={href}
+        className={styles}
+        {...(external && {
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        })}
+      >
+        {content}
       </a>
     )
   }
 
   return (
     <button type="button" onClick={onClick} className={styles}>
-      {children}
+      {content}
     </button>
   )
 }

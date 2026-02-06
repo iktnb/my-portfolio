@@ -1,16 +1,22 @@
 export const hero = {
-  name: 'Your Name',
-  role: 'Full-Stack Software Engineer',
-  tagline: 'Building products that scale.',
-}
+  name: "Yurii Basiuk",
+  role: "Full-Stack Software Engineer",
+  tagline: "Building products that scale.",
+};
 
 export const about = {
-  paragraph: `I'm a senior full-stack engineer with a product mindset. I care about clean architecture, shipping fast without cutting corners, and helping teams move from idea to production. I've led greenfield projects and scaled systems that serve millions of users. When I'm not coding, I'm usually reading about system design or exploring the terminal.`,
-}
+  paragraph: `I’m a frontend-leaning full-stack engineer with a strong product mindset.
+I focus on clean architecture, automation, and building systems that scale without turning into technical debt.
+
+I work across frontend, backend, and infrastructure — from UX-heavy flows to microservices, CI/CD, and cloud environments — helping products move smoothly from idea to production.
+
+Outside of work, I explore system design, developer tooling, and build side projects to continuously improve how I engineer software.`,
+};
 
 export const contact = {
   cta: "Let's build something together",
-  email: 'mailto:hello@example.com',
-  linkedin: 'https://linkedin.com/in/yourprofile',
-  github: 'https://github.com/yourusername',
-}
+  email: "mailto:iknowthatinobody@gmail.com",
+  telegram: "https://t.me/your_username",
+  linkedin: "https://www.linkedin.com/in/yurii-basiyk/",
+  github: "https://github.com/iktnb",
+};
