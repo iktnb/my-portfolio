@@ -1,3 +1,4 @@
+import { useCallback, useRef, useState } from 'react'
 import { ReactLenis } from 'lenis/react'
 import { AnimatedBackground } from './components/AnimatedBackground'
 import { About } from './components/About'
@@ -17,11 +18,45 @@ const lenisOptions = {
   anchors: true,
 }
 
+const SPOTLIGHT_OFF = { x: -9999, y: -9999 }
+
 function App() {
+  const mainRef = useRef<HTMLElement>(null)
+  const [spotlight, setSpotlight] = useState(SPOTLIGHT_OFF)
+
+  const handlePointerMove = useCallback((e: React.PointerEvent) => {
+    const el = mainRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    setSpotlight({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    })
+  }, [])
+
+  const handlePointerLeave = useCallback(() => {
+    setSpotlight(SPOTLIGHT_OFF)
+  }, [])
+
   return (
     <ReactLenis root options={lenisOptions}>
-      <main className="relative min-h-screen">
+      <main
+        ref={mainRef}
+        className="relative min-h-screen"
+        onPointerMove={handlePointerMove}
+        onPointerLeave={handlePointerLeave}
+      >
         <AnimatedBackground />
+        {/* Глобальный спотлайт за курсором на всей странице */}
+        {spotlight.x > -9999 && (
+          <div
+            className="pointer-events-none absolute inset-0 z-0 opacity-60"
+            style={{
+              background: `radial-gradient(ellipse 280px 240px at ${spotlight.x}px ${spotlight.y}px, rgba(56,189,248,0.1) 0%, rgba(167,139,250,0.05) 35%, transparent 65%)`,
+            }}
+            aria-hidden
+          />
+        )}
         <Hero />
         <TechStack />
         <Projects />
