@@ -1,3 +1,4 @@
+import { useLenis } from 'lenis/react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { hero } from '../data/content'
 import { GlowButton } from './shared/GlowButton'
@@ -5,6 +6,7 @@ import { GlowButton } from './shared/GlowButton'
 const HERO_SCROLL_RANGE = 900
 
 export function Hero() {
+  const lenis = useLenis()
   const shouldReduceMotion = useReducedMotion()
   const { scrollY } = useScroll()
   const heroY = useTransform(scrollY, [0, HERO_SCROLL_RANGE], [0, -140])
@@ -12,7 +14,11 @@ export function Hero() {
   const heroScale = useTransform(scrollY, [0, HERO_SCROLL_RANGE], [1, 0.88])
 
   const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+    if (lenis) {
+      lenis.scrollTo('#projects', { offset: 0, duration: 1.2 })
+    } else {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
