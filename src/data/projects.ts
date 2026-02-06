@@ -1,3 +1,7 @@
+import taskflowImg from '../assets/images/taskflow.svg'
+import devmetricsImg from '../assets/images/devmetrics.svg'
+import cloudsyncImg from '../assets/images/cloudsync.svg'
+
 export interface Project {
   title: string
   outcome: string
@@ -17,7 +21,7 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Commander', 'chalk', 'node-notifier'],
     link: '#',
     linkLabel: 'GitHub',
-    image: '/images/taskflow.svg',
+    image: taskflowImg,
   },
   {
     title: 'aromacandles',
@@ -27,7 +31,7 @@ export const projects: Project[] = [
     tech: ['React', 'Vite', 'Tailwind', 'Zustand'],
     link: '#',
     linkLabel: 'Open',
-    image: '/images/devmetrics.svg',
+    image: devmetricsImg,
   },
   {
     title: 'random-picker',
@@ -37,6 +41,6 @@ export const projects: Project[] = [
     tech: ['Vue 3', 'Vite', 'Tailwind'],
     link: '#',
     linkLabel: 'Play',
-    image: '/images/cloudsync.svg',
+    image: cloudsyncImg,
   }
 ]
