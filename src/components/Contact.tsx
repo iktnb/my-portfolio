@@ -19,7 +19,7 @@ export function Contact() {
             <IconEmail size={20} className="shrink-0" />
             Email
           </GlowButton>
-          <GlowButton href={contact.telegram} variant="violet" className="w-full sm:w-auto sm:min-w-0">
+          <GlowButton href={contact.telegram} variant="violet" external className="w-full sm:w-auto sm:min-w-0">
             <IconTelegram size={20} className="shrink-0" />
             Telegram
           </GlowButton>

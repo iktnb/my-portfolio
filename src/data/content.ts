@@ -16,7 +16,7 @@ Outside of work, I explore system design, developer tooling, and build side proj
 export const contact = {
   cta: "Let's build something together",
   email: "mailto:iknowthatinobody@gmail.com",
-  telegram: "https://t.me/your_username",
+  telegram: "https://t.me/iktnb",
   linkedin: "https://www.linkedin.com/in/yurii-basiyk/",
   github: "https://github.com/iktnb",
 };

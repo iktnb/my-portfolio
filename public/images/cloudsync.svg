@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <defs>
+    <linearGradient id="cloudsync-bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0F19"/>
+      <stop offset="1" stop-color="#1a1f2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#cloudsync-bg)"/>
+  <path d="M120 100c-15 0-28 10-32 24-2-1-5-2-8-2-11 0-20 9-20 20s9 20 20 20h80c11 0 20-9 20-20 0-11-9-20-20-20-3 0-6 1-8 2-4-14-17-24-32-24-18 0-33 15-33 33s15 33 33 33h120c18 0 33-15 33-33s-15-33-33-33c-15 0-28 10-32 24-2-1-5-2-8-2-11 0-20 9-20 20s9 20 20 20h40" stroke="#A78BFA" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="4 4" opacity="0.5"/>
+  <rect x="80" y="80" width="48" height="36" rx="4" fill="#A78BFA" fill-opacity="0.15" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <rect x="160" y="100" width="48" height="36" rx="4" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-opacity="0.5"/>
+  <rect x="240" y="80" width="48" height="36" rx="4" fill="#A78BFA" fill-opacity="0.15" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <path d="M200 60 L220 80 L200 100 L180 80 Z" fill="none" stroke="#38BDF8" stroke-opacity="0.6"/>
+  <path d="M200 140 L220 160 L200 180 L180 160 Z" fill="none" stroke="#A78BFA" stroke-opacity="0.6"/>
+</svg>

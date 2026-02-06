@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <defs>
+    <linearGradient id="taskflow-bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0F19"/>
+      <stop offset="1" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <filter id="glow-cyan">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="240" fill="url(#taskflow-bg)"/>
+  <rect x="24" y="40" width="90" height="60" rx="8" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-opacity="0.5"/>
+  <rect x="24" y="112" width="90" height="60" rx="8" fill="#38BDF8" fill-opacity="0.1" stroke="#38BDF8" stroke-opacity="0.3"/>
+  <rect x="154" y="40" width="90" height="60" rx="8" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-opacity="0.4"/>
+  <rect x="154" y="112" width="90" height="60" rx="8" fill="#38BDF8" fill-opacity="0.08" stroke="#38BDF8" stroke-opacity="0.3"/>
+  <rect x="284" y="40" width="90" height="60" rx="8" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-opacity="0.4"/>
+  <rect x="284" y="112" width="90" height="60" rx="8" fill="#A78BFA" fill-opacity="0.08" stroke="#A78BFA" stroke-opacity="0.3"/>
+</svg>

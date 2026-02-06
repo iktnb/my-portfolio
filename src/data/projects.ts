@@ -5,43 +5,38 @@ export interface Project {
   tech: string[]
   link: string
   linkLabel?: string
+  image: string
 }
 
 export const projects: Project[] = [
   {
-    title: 'E-commerce platform',
-    outcome: '40% faster checkout, 2x conversion lift',
+    title: 'pomodo',
+    outcome: 'Pomodoro timer in the terminal',
     description:
-      'Led end-to-end rebuild of checkout and inventory APIs. Introduced edge caching and optimized payment flow, reducing load time and abandoned carts.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Stripe'],
+      'CLI tool for focus: 25/5 min sessions, sound on break. Run from any folder, minimal setup.',
+    tech: ['Node.js', 'Commander', 'chalk', 'node-notifier'],
     link: '#',
-    linkLabel: 'View project',
+    linkLabel: 'GitHub',
+    image: '/images/taskflow.svg',
   },
   {
-    title: 'Internal tooling dashboard',
-    outcome: 'Cut support tickets by 30%',
+    title: 'aromacandles',
+    outcome: 'Aromatic candles shop + builder',
     description:
-      'Built an internal dashboard for ops and support teams to manage customers and run diagnostics without engineering involvement.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL'],
+      'Catalog of scented candles and a custom builder: pick wax, fragrance, size, packaging — build and order your own.',
+    tech: ['React', 'Vite', 'Tailwind', 'Zustand'],
     link: '#',
-    linkLabel: 'View project',
+    linkLabel: 'Open',
+    image: '/images/devmetrics.svg',
   },
   {
-    title: 'Real-time collaboration API',
-    outcome: 'Sub-100ms sync at scale',
+    title: 'random-picker',
+    outcome: 'List randomizer',
     description:
-      'Designed and shipped a real-time sync layer used by multiple product teams. WebSockets, conflict resolution, and horizontal scaling.',
-    tech: ['Go', 'WebSockets', 'Redis', 'Kubernetes'],
+      'Add options — spins the wheel and picks one. Who pays for lunch, what to watch tonight.',
+    tech: ['Vue 3', 'Vite', 'Tailwind'],
     link: '#',
-    linkLabel: 'View code',
-  },
-  {
-    title: 'Developer portal & docs',
-    outcome: 'Faster onboarding, fewer integration bugs',
-    description:
-      'Productized API documentation and self-serve key management. Search, code samples, and interactive playground.',
-    tech: ['Next.js', 'MDX', 'OpenAPI', 'Vercel'],
-    link: '#',
-    linkLabel: 'View project',
-  },
+    linkLabel: 'Play',
+    image: '/images/cloudsync.svg',
+  }
 ]
