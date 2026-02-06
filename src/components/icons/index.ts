@@ -1,0 +1,7 @@
+export { IconAbout } from './IconAbout'
+export { IconTech } from './IconTech'
+export { IconProjects } from './IconProjects'
+export { IconContact } from './IconContact'
+export { IconEmail } from './IconEmail'
+export { IconLinkedIn } from './IconLinkedIn'
+export { IconGithub } from './IconGithub'

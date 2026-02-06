@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Theme: premium portfolio design system */
+@theme {
+  --color-background: #0B0F19;
+  --color-card: #111827;
+  --color-accent-cyan: #38BDF8;
+  --color-accent-violet: #A78BFA;
+  --color-primary: #E5E7EB;
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-primary antialiased;
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
