@@ -1,13 +1,29 @@
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { hero } from '../data/content'
 import { GlowButton } from './shared/GlowButton'
 
+const HERO_SCROLL_RANGE = 900
+
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion()
+  const { scrollY } = useScroll()
+  const heroY = useTransform(scrollY, [0, HERO_SCROLL_RANGE], [0, -140])
+  const heroOpacity = useTransform(scrollY, [0, HERO_SCROLL_RANGE * 0.6], [1, 0.25])
+  const heroScale = useTransform(scrollY, [0, HERO_SCROLL_RANGE], [1, 0.88])
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <section className="relative flex min-h-[85vh] flex-col items-center justify-center px-6 py-24 text-center">
+    <motion.section
+      style={{
+        y: shouldReduceMotion ? 0 : heroY,
+        opacity: shouldReduceMotion ? 1 : heroOpacity,
+        scale: shouldReduceMotion ? 1 : heroScale,
+      }}
+      className="relative flex min-h-[85vh] flex-col items-center justify-center px-6 py-24 text-center will-change-transform"
+    >
       <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
         {hero.name}
       </h1>
@@ -27,6 +43,6 @@ export function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-primary/50">
         <span className="text-2xl">↓</span>
       </div>
-    </section>
+    </motion.section>
   )
 }

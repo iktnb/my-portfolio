@@ -1,9 +1,11 @@
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useEffect, useRef } from 'react'
 import { useMousePositionRef } from '../hooks/useMousePosition'
 
 const ORB_COUNT = 4
 const LERP = 0.02
 const MOUSE_INFLUENCE = 0.15
+const PARALLAX_OFFSET_PX = 280
 
 function lerp(a: number, b: number, t: number) {
   return a + (b - a) * t
@@ -42,14 +44,14 @@ export function AnimatedBackground() {
 
     const setSize = () => {
       const w = window.innerWidth
-      const h = window.innerHeight
+      const h = window.innerHeight + PARALLAX_OFFSET_PX
       const dpr = Math.min(window.devicePixelRatio ?? 1, 2)
       canvas.width = w * dpr
       canvas.height = h * dpr
-      canvas.style.width = `${w}px`
+      canvas.style.width = `${window.innerWidth}px`
       canvas.style.height = `${h}px`
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      sizeRef.current = { w, h }
+      sizeRef.current = { w: window.innerWidth, h }
     }
 
     const draw = () => {
@@ -117,12 +119,28 @@ export function AnimatedBackground() {
     }
   }, [mouseRef])
 
+  const shouldReduceMotion = useReducedMotion()
+  const { scrollY } = useScroll()
+  const parallaxY = useTransform(scrollY, [0, 900], [0, -PARALLAX_OFFSET_PX])
+
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 -z-10 h-full w-full pointer-events-none"
-      style={{ background: 'var(--color-background)' }}
-      aria-hidden
-    />
+    <motion.div
+      className="fixed left-0 top-0 -z-10 w-full pointer-events-none"
+      style={{
+        height: `calc(100vh + ${PARALLAX_OFFSET_PX}px)`,
+        background: 'var(--color-background)',
+        y: shouldReduceMotion ? 0 : parallaxY,
+      }}
+    >
+      <canvas
+        ref={canvasRef}
+        className="block w-full shrink-0"
+        style={{
+          height: `calc(100vh + ${PARALLAX_OFFSET_PX}px)`,
+          background: 'var(--color-background)',
+        }}
+        aria-hidden
+      />
+    </motion.div>
   )
 }
