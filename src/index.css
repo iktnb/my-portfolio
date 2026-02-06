@@ -31,8 +31,11 @@
     @apply bg-background text-primary antialiased;
     font-family: var(--font-body);
     min-height: 100vh;
+    min-height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom, 0);
   }
   h1, h2, h3, .font-heading {
     font-family: var(--font-heading);
   }
 }
+

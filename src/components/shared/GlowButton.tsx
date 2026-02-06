@@ -18,7 +18,7 @@ export function GlowButton({
   className = '',
 }: GlowButtonProps) {
   const base =
-    'group relative inline-flex items-center justify-center overflow-hidden rounded-md px-6 py-3 font-medium transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background active:scale-[0.98]'
+    'group relative inline-flex min-h-[44px] min-w-[44px] items-center justify-center overflow-hidden rounded-md px-5 py-3 font-medium transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background active:scale-[0.98] sm:min-w-0 sm:px-6'
   const cyan =
     'border border-accent-cyan/50 bg-accent-cyan/5 text-accent-cyan hover:border-accent-cyan hover:bg-accent-cyan/15 hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(56,189,248,0.35)] focus:ring-accent-cyan'
   const violet =
