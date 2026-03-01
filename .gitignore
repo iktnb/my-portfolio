@@ -19,6 +19,7 @@
 /dist/
 /public/CNAME
 /public/.nojekyll
+/public/favicons/
 # production
 /build
 

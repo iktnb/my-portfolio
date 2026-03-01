@@ -133,6 +133,12 @@ export function About() {
           {t('about.title')}
         </h2>
 
+        <div className="sr-only" aria-hidden="true">
+          {paragraphs.map((text, index) => (
+            <p key={`seo-${index}`}>{text}</p>
+          ))}
+        </div>
+
         <div className="neon-glow-cyan mt-6 rounded-2xl border border-accent-cyan/35 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.14),rgba(17,24,39,0.88)_48%)] px-5 py-6 text-left shadow-[0_0_30px_rgba(56,189,248,0.2),inset_0_0_24px_rgba(56,189,248,0.08)] sm:mt-8 sm:px-6 sm:py-7">
           <div className="h-[13.5rem] overflow-hidden text-primary/90 text-[15px] leading-[1.75] sm:text-base sm:leading-[1.8]">
             {showFullReveal ? (

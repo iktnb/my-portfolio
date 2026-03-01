@@ -20,8 +20,22 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: 'Yurii Basiuk Portfolio',
   description: 'Full-Stack Software Engineer portfolio',
+  manifest: '/favicons/manifest.webmanifest',
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicons/favicon.ico', sizes: 'any', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/favicons/favicon.ico',
+    apple: [
+      {
+        url: '/favicons/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
   },
 }
 

@@ -1,12 +1,15 @@
-import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { basename, resolve } from 'node:path'
 import { PHASE_PRODUCTION_BUILD } from 'next/constants'
+import { favicons } from 'favicons'
 import { getSiteUrl } from '../../src/seo/siteSeo'
 import { generateLlmsTxt } from './llms'
 
 const PUBLIC_DIR = resolve(process.cwd(), 'public')
 const SKILLS_ICONS_DIR = resolve(PUBLIC_DIR, 'icons', 'skills')
 const SKILLS_SPRITE_NAME = 'sprite.svg'
+const FAVICON_SOURCE = resolve(PUBLIC_DIR, 'favicon.svg')
+const FAVICONS_DIR = resolve(PUBLIC_DIR, 'favicons')
 
 async function writeCnameFile() {
   const siteUrl = getSiteUrl()
@@ -24,6 +27,60 @@ async function writeNoJekyllFile() {
 async function writeLlmsFile() {
   await mkdir(PUBLIC_DIR, { recursive: true })
   await writeFile(resolve(PUBLIC_DIR, 'llms.txt'), generateLlmsTxt(), 'utf8')
+}
+
+async function writeFaviconsFiles() {
+  let sourceExists = true
+
+  try {
+    await readFile(FAVICON_SOURCE, 'utf8')
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+      sourceExists = false
+    } else {
+      throw error
+    }
+  }
+
+  if (!sourceExists) return
+
+  const siteDomain = new URL(getSiteUrl()).hostname
+  const generated = await favicons(FAVICON_SOURCE, {
+    path: '/favicons/',
+    appName: 'Yurii Basiuk Portfolio',
+    appShortName: 'Yurii Portfolio',
+    appDescription: 'Full-Stack Software Engineer portfolio',
+    lang: 'en-US',
+    dir: 'auto',
+    display: 'standalone',
+    orientation: 'portrait',
+    scope: '/',
+    start_url: '/',
+    theme_color: '#0B0F19',
+    background: '#0B0F19',
+    developerName: 'Yurii Basiuk',
+    developerURL: `https://${siteDomain}/`,
+    icons: {
+      favicons: true,
+      appleIcon: true,
+      android: true,
+      appleStartup: false,
+      windows: true,
+      yandex: false,
+    },
+  })
+
+  await rm(FAVICONS_DIR, { recursive: true, force: true })
+  await mkdir(FAVICONS_DIR, { recursive: true })
+
+  await Promise.all([
+    ...generated.images.map(({ name, contents }) =>
+      writeFile(resolve(FAVICONS_DIR, name), contents)
+    ),
+    ...generated.files.map(({ name, contents }) =>
+      writeFile(resolve(FAVICONS_DIR, name), contents, 'utf8')
+    ),
+  ])
 }
 
 function extractSvgParts(svgContent: string): { viewBox: string; body: string } {
@@ -85,7 +142,7 @@ async function writeSkillsSpriteFile() {
 }
 
 export async function preparePublicAssets(phase: string) {
-  await Promise.all([writeLlmsFile(), writeSkillsSpriteFile()])
+  await Promise.all([writeLlmsFile(), writeSkillsSpriteFile(), writeFaviconsFiles()])
 
   if (phase !== PHASE_PRODUCTION_BUILD) return
 
