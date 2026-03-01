@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yurii Basiuk — Portfolio
 
-## Getting Started
+Personal portfolio site for **Yurii Basiuk**, Full-Stack Software Engineer. Built with Next.js, TypeScript, and Tailwind CSS. Bilingual (English / Ukrainian), SEO-friendly, and deployable to GitHub Pages.
 
-First, run the development server:
+## Tech stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **UI:** React 19, [Motion](https://motion.dev/) (animations), [Tailwind CSS 4](https://tailwindcss.com/)
+- **Language:** TypeScript
+- **i18n:** Custom solution with locale-specific routes (`/` — English, `/ua/` — Ukrainian)
+
+## Features
+
+- **Bilingual:** EN and UA with `LanguageSwitcher` and locale-specific metadata
+- **SEO:** Per-locale metadata, Open Graph, Twitter cards, JSON-LD (Person), `sitemap.xml`, `robots.txt`
+- **Static export:** `output: 'export'` for hosting on GitHub Pages
+- **Build automation:** Scripts generate `CNAME`, `.nojekyll`, `llms.txt`, and an SVG sprite from `public/icons/skills/*.svg`
+- **Deploy:** GitHub Actions deploys `dist` to the `gh-pages` branch on push to `main`
+
+## Project structure
+
+```
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout, fonts
+│   ├── page.tsx            # English home
+│   ├── ua/page.tsx         # Ukrainian home
+│   ├── metadata.ts         # Locale metadata builder
+│   ├── sitemap.ts
+│   └── robots.ts
+├── src/
+│   ├── App.tsx             # Main client app (Hero, About, Projects, TechStack, Contact)
+│   ├── components/         # UI components and shared pieces
+│   ├── data/               # projects, tech, contacts
+│   ├── i18n/               # locales (en, ua), translator, client provider
+│   ├── seo/                # siteSeo (URLs, per-locale SEO, JSON-LD)
+│   └── hooks/
+├── scripts/build/          # Build-time scripts (publicAssets, llms.txt)
+├── public/                 # Static assets, favicon, og-cover, icons/skills
+└── .github/workflows/      # Deploy to GitHub Pages
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 20+
+- npm
 
-## Learn More
+### Install and run
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000). Use `/ua/` for the Ukrainian version.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Environment
 
-## Deploy on Vercel
+For production build and SEO URLs, set:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **`NEXT_PUBLIC_SITE_URL`** — absolute site URL (e.g. `https://www.iktnb.org`). Required; used for canonical URLs, sitemap, and Open Graph.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No `.env` is committed; use `.env.local` locally and GitHub Actions secrets for deploy.
+
+## Scripts
+
+| Command   | Description                          |
+|----------|--------------------------------------|
+| `npm run dev`   | Start dev server (Next.js)           |
+| `npm run build` | Static export to `dist/`             |
+| `npm run deploy`| Build and push `dist` to `gh-pages`  |
+| `npm run lint`  | Run ESLint                           |
+
+## Deploy (GitHub Pages)
+
+1. **Repository:** Enable GitHub Pages for the repo, source = branch `gh-pages` (or use the `gh-pages` branch created by the workflow).
+2. **Secret:** In repo **Settings → Secrets and variables → Actions**, add `NEXT_PUBLIC_SITE_URL` with your production URL (e.g. `https://www.iktnb.org`).
+3. **Push:** Pushing to `main` runs the workflow: install → build (with `NEXT_PUBLIC_SITE_URL`) → deploy to `gh-pages`.
+
+The build writes `public/CNAME` from `NEXT_PUBLIC_SITE_URL` so a custom domain works when configured in GitHub.
+
+## License
+
+Private project. All rights reserved.
