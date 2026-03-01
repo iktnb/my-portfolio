@@ -1,9 +1,9 @@
-interface IconTelegramProps {
+export interface IconTechProps {
   className?: string
   size?: number
 }
 
-export function IconTelegram({ className = '', size = 24 }: IconTelegramProps) {
+export function IconTech({ className = '', size = 24 }: IconTechProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,8 +17,9 @@ export function IconTelegram({ className = '', size = 24 }: IconTelegramProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m22 2-7 20-4-9-9-4Z" />
-      <path d="M22 2 11 13" />
+      <path d="M7 8l-4 4 4 4" />
+      <path d="M17 8l4 4-4 4" />
+      <path d="M14 4l-4 16" opacity="0.85" />
     </svg>
   )
 }

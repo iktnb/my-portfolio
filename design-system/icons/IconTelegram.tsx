@@ -1,9 +1,9 @@
-interface IconEmailProps {
+export interface IconTelegramProps {
   className?: string
   size?: number
 }
 
-export function IconEmail({ className = '', size = 24 }: IconEmailProps) {
+export function IconTelegram({ className = '', size = 24 }: IconTelegramProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,8 +17,8 @@ export function IconEmail({ className = '', size = 24 }: IconEmailProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 6-10 7L2 6" opacity="0.85" />
+      <path d="m22 2-7 20-4-9-9-4Z" />
+      <path d="M22 2 11 13" />
     </svg>
   )
 }

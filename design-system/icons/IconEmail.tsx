@@ -1,9 +1,9 @@
-interface IconProjectsProps {
+export interface IconEmailProps {
   className?: string
   size?: number
 }
 
-export function IconProjects({ className = '', size = 24 }: IconProjectsProps) {
+export function IconEmail({ className = '', size = 24 }: IconEmailProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,8 +17,8 @@ export function IconProjects({ className = '', size = 24 }: IconProjectsProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <path d="M9 22V12h6v10" opacity="0.85" />
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 6-10 7L2 6" opacity="0.85" />
     </svg>
   )
 }

@@ -34,10 +34,23 @@ Personal portfolio site for **Yurii Basiuk**, Full-Stack Software Engineer. Buil
 │   ├── i18n/               # locales (en, ua), translator, client provider
 │   ├── seo/                # siteSeo (URLs, per-locale SEO, JSON-LD)
 │   └── hooks/
+├── design-system/          # Reusable design system (theme, components, icons)
 ├── scripts/build/          # Build-time scripts (publicAssets, llms.txt)
 ├── public/                 # Static assets, favicon, og-cover, icons/skills
 └── .github/workflows/      # Deploy to GitHub Pages
 ```
+
+### Design system
+
+The **`design-system/`** folder contains the shared theme and UI building blocks so you can reuse the same look in another project:
+
+- **theme.css** — Tailwind v4 tokens (colors, fonts), base styles, neon utilities
+- **tokens.ts** — Same values in JS (e.g. for charts)
+- **components/** — `Card`, `GlowButton`, `SectionReveal`
+- **hooks/** — `useInView`
+- **icons/** — SVG icons (About, Tech, Projects, Contact, Email, LinkedIn, Github, Telegram)
+
+See **`design-system/README.md`** for how to copy and integrate this into a new project.
 
 ## Getting started
 

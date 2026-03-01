@@ -1,4 +1,4 @@
-interface IconGithubProps {
+export interface IconGithubProps {
   className?: string
   size?: number
 }
