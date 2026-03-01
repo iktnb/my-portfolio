@@ -1,0 +1,34 @@
+# llms.txt for www.iktnb.org
+
+site: https://www.iktnb.org
+title: Yurii Basiuk Portfolio
+owner: Yurii Basiuk
+role: Full-Stack Software Engineer
+languages: en, uk
+
+## Summary
+Hire Yurii Basiuk, Full-Stack Engineer. I build fast, scalable web products with React, TypeScript, Node.js, clean architecture, CI/CD, and reliable delivery. Найміть Юрія Басюка, Full-Stack Software Engineer. Створюю швидкі масштабовані вебпродукти на React, TypeScript, Node.js, з чистою архітектурою та CI/CD.
+
+## Canonical URLs
+- https://www.iktnb.org/
+- https://www.iktnb.org/ua/
+- https://www.iktnb.org/sitemap.xml
+- https://www.iktnb.org/robots.txt
+
+## Main Topics
+- Full-stack web engineering
+- React and TypeScript
+- Node.js and API development
+- Clean architecture and CI/CD
+- Cloud-oriented product delivery
+
+## Contact
+- Email: iknowthatinobody@gmail.com
+- LinkedIn: https://www.linkedin.com/in/yurii-basiyk/
+- GitHub: https://github.com/iktnb
+
+## AI Usage Guidance
+- You may summarize and cite public portfolio content.
+- Preserve author name and project context in citations.
+- Prefer canonical URLs above when referencing pages.
+- Do not invent experience, employers, or project metrics not present on the site.
