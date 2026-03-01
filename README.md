@@ -52,6 +52,8 @@ The **`design-system/`** folder contains the shared theme and UI building blocks
 
 See **`design-system/README.md`** for how to copy and integrate this into a new project.
 
+To use **design-system as a Git submodule** (separate repo, shared across projects), see **`design-system/SUBMODULE.md`**.
+
 ## Getting started
 
 ### Prerequisites
@@ -73,6 +75,7 @@ Open [http://localhost:3000](http://localhost:3000). Use `/ua/` for the Ukrainia
 For production build and SEO URLs, set:
 
 - **`NEXT_PUBLIC_SITE_URL`** — absolute site URL (e.g. `https://www.iktnb.org`). Required; used for canonical URLs, sitemap, and Open Graph.
+- **`GTM_TOKEN`** — optional; Google Tag Manager container ID (e.g. `GTM-XXXXXX`). If set, GTM script and noscript snippet are injected in the root layout.
 
 No `.env` is committed; use `.env.local` locally and GitHub Actions secrets for deploy.
 
@@ -88,7 +91,7 @@ No `.env` is committed; use `.env.local` locally and GitHub Actions secrets for 
 ## Deploy (GitHub Pages)
 
 1. **Repository:** Enable GitHub Pages for the repo, source = branch `gh-pages` (or use the `gh-pages` branch created by the workflow).
-2. **Secret:** In repo **Settings → Secrets and variables → Actions**, add `NEXT_PUBLIC_SITE_URL` with your production URL (e.g. `https://www.iktnb.org`).
+2. **Secrets:** In repo **Settings → Secrets and variables → Actions**, add `NEXT_PUBLIC_SITE_URL` (production URL, e.g. `https://www.iktnb.org`) and optionally `GTM_TOKEN` (Google Tag Manager container ID, e.g. `GTM-XXXXXX`).
 3. **Push:** Pushing to `main` runs the workflow: install → build (with `NEXT_PUBLIC_SITE_URL`) → deploy to `gh-pages`.
 
 The build writes `public/CNAME` from `NEXT_PUBLIC_SITE_URL` so a custom domain works when configured in GitHub.

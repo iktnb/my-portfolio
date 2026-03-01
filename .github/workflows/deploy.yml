@@ -37,4 +37,5 @@ jobs:
       - name: Deploy
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          GTM_TOKEN: ${{ secrets.GTM_TOKEN }}
         run: npm run deploy
