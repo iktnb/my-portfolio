@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Yurii Basiuk Portfolio</title>
+  <desc id="desc">Full-stack engineer portfolio cover image with dark futuristic design.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#121A2B" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1030" cy="100" r="220" fill="#38BDF8" opacity="0.08" />
+  <circle cx="180" cy="560" r="260" fill="#A78BFA" opacity="0.08" />
+  <rect x="96" y="90" width="1008" height="450" rx="28" fill="#0E1525" stroke="url(#glow)" stroke-opacity="0.5" />
+  <text x="150" y="255" fill="#E8F2FF" font-family="Exo 2, Arial, sans-serif" font-size="62" font-weight="700">
+    Yurii Basiuk
+  </text>
+  <text x="150" y="330" fill="#9FDFFF" font-family="Exo 2, Arial, sans-serif" font-size="40" font-weight="600">
+    Full-Stack Software Engineer
+  </text>
+  <text x="150" y="395" fill="#CADDFF" font-family="Exo 2, Arial, sans-serif" font-size="30">
+    Building scalable web products and cloud-ready systems
+  </text>
+  <rect x="150" y="445" width="420" height="8" rx="4" fill="url(#glow)" opacity="0.9" />
+</svg>

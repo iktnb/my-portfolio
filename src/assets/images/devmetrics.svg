@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <defs>
+    <linearGradient id="devmetrics-bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0F19"/>
+      <stop offset="1" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="chart-cyan" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+      <stop stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="chart-violet" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+      <stop stop-color="#A78BFA" stop-opacity="0"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#devmetrics-bg)"/>
+  <polyline points="40,180 90,140 140,160 190,80 240,100 290,50 340,70 360,40" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <polyline points="40,200 90,170 140,190 190,150 240,170 290,120 340,140 360,110" stroke="#A78BFA" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <rect x="50" y="60" width="80" height="40" rx="4" fill="#38BDF8" fill-opacity="0.1" stroke="#38BDF8" stroke-opacity="0.4"/>
+  <rect x="270" y="60" width="80" height="40" rx="4" fill="#A78BFA" fill-opacity="0.1" stroke="#A78BFA" stroke-opacity="0.4"/>
+  <circle cx="200" cy="120" r="30" fill="none" stroke="#38BDF8" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+</svg>
