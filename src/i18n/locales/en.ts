@@ -6,16 +6,20 @@ export const en = {
     cta: 'View my work',
   },
   about: {
-    title: 'About',
-    paragraph: `I'm a full-stack engineer with a strong product mindset, focused on building systems that remain clear, reliable, and scalable as they grow. I approach development as an end-to-end responsibility that spans user experience, application logic, infrastructure, and delivery pipelines — ensuring that ideas move from concept to production without accumulating unnecessary complexity or technical debt.
+    title: 'Why this site',
+    readMore: 'Read more',
+    readLess: 'Show less',
+    paragraph: `This site is built to find people who want to create useful things together. Real projects, real collaboration, and real impact.
 
-My work connects product thinking with technical execution. I start by understanding business goals, user journeys, and operational constraints, then translate those insights into a pragmatic architecture and delivery plan. This includes defining milestones, surfacing risks early, and creating measurable outcomes so teams can move quickly while staying confident in what they ship. The goal is not just to deliver features, but to build a foundation that allows products to evolve without costly rewrites.
+The focus here is not self-promotion. The focus is shared building: products that solve meaningful problems, improve everyday life, and make technology more human.
 
-I care deeply about maintainability and long-term reliability. That means readable, well-structured code, strong typing, thoughtful abstractions, and test coverage that protects behavior without slowing development. I invest in consistent engineering standards, automated quality checks, and CI/CD workflows that make releases predictable and repeatable. Performance, accessibility, SEO fundamentals, and observability are treated as integral parts of the system, not afterthoughts, so product decisions can be guided by real data.
+Inside, you will find projects, stack, and execution style so it is easy to see how we can work as one team from idea to production.
 
-Across backend services, APIs, and infrastructure, I focus on designing solutions that scale operationally as well as technically — systems that are easy to reason about, monitor, and extend by other engineers. I enjoy improving developer experience through tooling, automation, and clear documentation, because fast teams depend on frictionless environments.
+The goal is to connect with founders, engineers, designers, and product people who care about quality, speed, and long-term value.
 
-I collaborate closely with founders, designers, and cross-functional teams, helping translate ideas into deliverable increments while maintaining technical clarity. If you need an engineer who can take ownership from discovery through production, communicate trade-offs transparently, and deliver stable, scalable results, I'd be glad to contribute.`,
+If you believe software should do more than ship features, if you want to build products that help people and leave things better than they were, this space is for you.
+
+Let us connect and build something that matters.`,
   },
   contact: {
     title: 'Get in touch',

@@ -23,7 +23,7 @@ export function Hero() {
         opacity: shouldReduceMotion ? 1 : heroOpacity,
         scale: shouldReduceMotion ? 1 : heroScale,
       }}
-      className="relative flex min-h-[80vh] sm:min-h-[85vh] flex-col items-center justify-center px-4 py-16 sm:px-6 sm:py-24 md:py-28 text-center will-change-transform"
+      className="relative flex h-screen min-h-[100dvh] flex-col items-center justify-center px-4 py-16 text-center will-change-transform sm:h-auto sm:min-h-[85vh] sm:px-6 sm:py-24 md:py-28"
     >
       <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
         {t('hero.name')}

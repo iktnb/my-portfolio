@@ -57,8 +57,8 @@ function App({ locale }: AppProps) {
           />
         )}
         <Hero />
-        <TechStack />
         <Projects />
+        <TechStack />
         <About />
         <Contact />
       </main>
